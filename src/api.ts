@@ -1,9 +1,11 @@
 
 import axios from 'axios'
 import Constants from 'expo-constants'
+import { Platform } from 'react-native'
 
 const extra = (Constants?.expoConfig?.extra || {}) as any
-const API_URL = extra.apiUrl || 'http://localhost:4000'
+const DEFAULT_API_URL = Platform.OS === 'android' ? 'http://10.0.2.2:4000' : 'http://localhost:4000'
+const API_URL = extra.apiUrl || DEFAULT_API_URL
 
 export type Item = {
   id: number
