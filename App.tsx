@@ -1,8 +1,8 @@
 
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import ListScreen from './app/screens/ListScreen'
-import MapScreen from './app/screens/MapScreen'
+import ListScreen from './src/screens/ListScreen'
+import MapScreen from './src/screens/MapScreen'
 import { StatusBar } from 'expo-status-bar'
 
 const Tab = createBottomTabNavigator()

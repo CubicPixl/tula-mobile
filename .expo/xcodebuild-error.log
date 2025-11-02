@@ -1,0 +1,10 @@
+--- xcodebuild: WARNING: Using the first of multiple matching destinations:
+{ platform:iOS Simulator, arch:arm64, id:3F758FA0-67E7-47E5-9037-C718EFF06765, OS:18.4, name:iPhone 16 Pro }
+{ platform:iOS Simulator, arch:x86_64, id:3F758FA0-67E7-47E5-9037-C718EFF06765, OS:18.4, name:iPhone 16 Pro }
+** BUILD FAILED **
+
+
+The following build commands failed:
+	CompileC /Users/isaaccsantillan/Library/Developer/Xcode/DerivedData/TulaTurismo-fhajhkwmddndxwaovyxbuulvwzhy/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/React-rendererdebug.build/Objects-normal/arm64/DebugStringConvertible.o /Users/isaaccsantillan/Documents/UVM/SS/tula-turismo/mobile-app/node_modules/react-native/ReactCommon/react/renderer/debug/DebugStringConvertible.cpp normal arm64 c++ com.apple.compilers.llvm.clang.1_0.compiler (in target 'React-rendererdebug' from project 'Pods')
+	Building workspace TulaTurismo with scheme TulaTurismo and configuration Debug
+(2 failures)

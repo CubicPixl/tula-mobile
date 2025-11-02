@@ -13,32 +13,14 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      },
-      "permissions": [],
-      "config": {
-        "googleMaps": {
-          "apiKey": "PASTE_YOUR_ANDROID_MAPS_KEY_HERE"
-        }
-      }
-    },
     "web": {
       "bundler": "metro",
-      "output": "server"
+      "output": "static"
     },
-    "plugins": [],
+    "plugins": [
+      "expo-asset",
+      "expo-maps"
+    ],
     "extra": {
       "eas": {
         "projectId": "local-dev"
