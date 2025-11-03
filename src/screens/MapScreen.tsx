@@ -24,6 +24,17 @@ async function loadMapImplementation(): Promise<MapImplementation> {
       try {
         const mapsModule = (await import('expo-maps')) as MapsModule
         if (mapsModule?.MapView && mapsModule?.Marker) {
+          const ExpoMapView = mapsModule.MapView as MapsModule['MapView'] & {
+            isAvailableAsync?: () => Promise<boolean>
+          }
+
+          if (ExpoMapView?.isAvailableAsync) {
+            const isAvailable = await ExpoMapView.isAvailableAsync()
+            if (!isAvailable) {
+              throw new Error('Expo maps native module unavailable')
+            }
+          }
+
           cachedImplementation = {
             MapView: mapsModule.MapView,
             Marker: mapsModule.Marker,
