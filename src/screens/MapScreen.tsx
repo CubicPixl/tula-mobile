@@ -24,7 +24,12 @@ type MapsModule = {
     Marker?: ComponentType<any>
   }
 }
-type RNMapsModule = typeof import('react-native-maps')
+
+type RNMapsModule = {
+  default?: ComponentType<any>
+  MapView?: ComponentType<any>
+  Marker?: ComponentType<any>
+}
 
 let cachedImplementation: MapImplementation | null = null
 let loadingImplementation: Promise<MapImplementation> | null = null
