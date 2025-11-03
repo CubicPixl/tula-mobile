@@ -8,7 +8,22 @@ type MapImplementation = {
   source: 'expo-maps' | 'react-native-maps'
 }
 
-type MapsModule = typeof import('expo-maps')
+type MapsModule = {
+  MapView?: ComponentType<any>
+  Marker?: ComponentType<any>
+  default?: {
+    MapView?: ComponentType<any>
+    Marker?: ComponentType<any>
+  }
+  GoogleMaps?: {
+    View?: ComponentType<any>
+    Marker?: ComponentType<any>
+  }
+  AppleMaps?: {
+    View?: ComponentType<any>
+    Marker?: ComponentType<any>
+  }
+}
 type RNMapsModule = typeof import('react-native-maps')
 
 let cachedImplementation: MapImplementation | null = null
@@ -23,21 +38,33 @@ async function loadMapImplementation(): Promise<MapImplementation> {
     loadingImplementation = (async () => {
       try {
         const mapsModule = (await import('expo-maps')) as MapsModule
-        if (mapsModule?.MapView && mapsModule?.Marker) {
-          const ExpoMapView = mapsModule.MapView as MapsModule['MapView'] & {
+        const ExpoMapView =
+          mapsModule?.MapView ||
+          mapsModule?.default?.MapView ||
+          mapsModule?.GoogleMaps?.View ||
+          mapsModule?.AppleMaps?.View
+
+        const ExpoMarker =
+          mapsModule?.Marker ||
+          mapsModule?.default?.Marker ||
+          mapsModule?.GoogleMaps?.Marker ||
+          mapsModule?.AppleMaps?.Marker
+
+        if (ExpoMapView && ExpoMarker) {
+          const MapComponent = ExpoMapView as ComponentType<any> & {
             isAvailableAsync?: () => Promise<boolean>
           }
 
-          if (ExpoMapView?.isAvailableAsync) {
-            const isAvailable = await ExpoMapView.isAvailableAsync()
+          if (MapComponent?.isAvailableAsync) {
+            const isAvailable = await MapComponent.isAvailableAsync()
             if (!isAvailable) {
               throw new Error('Expo maps native module unavailable')
             }
           }
 
           cachedImplementation = {
-            MapView: mapsModule.MapView,
-            Marker: mapsModule.Marker,
+            MapView: ExpoMapView,
+            Marker: ExpoMarker,
             source: 'expo-maps',
           }
           return cachedImplementation
