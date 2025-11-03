@@ -13,3 +13,4 @@ android/
 # Misc
 .DS_Store
 *.log
+.expo/
