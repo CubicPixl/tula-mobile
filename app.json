@@ -16,9 +16,7 @@
       "bundler": "metro",
       "output": "single"
     },
-    "plugins": [
-      "expo-asset",
-    ],
+    "plugins": ["expo-asset", "expo-maps"],
     "extra": {
       "eas": {
         "projectId": "local-dev"
