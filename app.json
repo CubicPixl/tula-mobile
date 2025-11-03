@@ -5,7 +5,6 @@
     "version": "0.1.0",
     "sdkVersion": "52.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
     "scheme": "tula",
     "userInterfaceStyle": "automatic",
     "splash": {
@@ -26,6 +25,17 @@
         "projectId": "local-dev"
       },
       "apiUrl": "http://localhost:4000"
-    }
+    },
+    "android": {
+      "package": "com.verson.tulamobile",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      }
+    },
+    "ios": {
+      "bundleIdentifier": "com.verson.tulamobile"
+    },
+    "icon": "./assets/icon.png"
   }
 }

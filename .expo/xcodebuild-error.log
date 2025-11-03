@@ -5,6 +5,7 @@
 
 
 The following build commands failed:
-	CompileC /Users/isaaccsantillan/Library/Developer/Xcode/DerivedData/TulaTurismo-fhajhkwmddndxwaovyxbuulvwzhy/Build/Intermediates.noindex/Pods.build/Debug-iphonesimulator/React-rendererdebug.build/Objects-normal/arm64/DebugStringConvertible.o /Users/isaaccsantillan/Documents/UVM/SS/tula-turismo/mobile-app/node_modules/react-native/ReactCommon/react/renderer/debug/DebugStringConvertible.cpp normal arm64 c++ com.apple.compilers.llvm.clang.1_0.compiler (in target 'React-rendererdebug' from project 'Pods')
+	SwiftEmitModule normal arm64 Emitting\ module\ for\ ExpoMaps (in target 'ExpoMaps' from project 'Pods')
+	EmitSwiftModule normal arm64 (in target 'ExpoMaps' from project 'Pods')
 	Building workspace TulaTurismo with scheme TulaTurismo and configuration Debug
-(2 failures)
+(3 failures)

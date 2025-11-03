@@ -1,0 +1,37 @@
+{
+  "expo": {
+    "name": "Tula Turismo",
+    "slug": "tula-mobile",
+    "version": "0.1.0",
+    "sdkVersion": "52.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "tula",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single"
+    },
+    "plugins": [
+      "expo-asset",
+      "expo-maps"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "local-dev"
+      },
+      "apiUrl": "http://localhost:4000"
+    },
+    "android": {
+      "package": "com.verson.tulamobile"
+    },
+    "ios": {
+      "bundleIdentifier": "com.verson.tulamobile"
+    }
+  }
+}
