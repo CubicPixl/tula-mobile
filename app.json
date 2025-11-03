@@ -6,6 +6,13 @@
     "sdkVersion": "52.0.0",
     "orientation": "portrait",
     "scheme": "tula",
+    "android": {
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyB9w5ngDumKqIVIrdlEQKIs4-gcGGV5FEU"
+        }
+      }
+    },
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/splash.png",
@@ -16,7 +23,9 @@
       "bundler": "metro",
       "output": "single"
     },
-    "plugins": ["expo-asset", "expo-maps"],
+    "plugins": [
+      "expo-asset"
+    ],
     "extra": {
       "eas": {
         "projectId": "local-dev"
